@@ -1,0 +1,80 @@
+            <div class="box product">
+  
+<figure class="product-grid-item--center">
+    <a id="ProductGridImageWrapper-collection-template-161995751478-4481128169526" href="/collections/all/products/notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace" class="product_card"><div class="product_card__image-wrapper" data-bgset="//cdn.shopify.com/s/files/1/1102/7446/products/white-gold-notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace-15310930247734_180x.jpg?v=1584141674 180w 180h,//cdn.shopify.com/s/files/1/1102/7446/products/white-gold-notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace-15310930247734_295x.jpg?v=1584141674 295w 295h,//cdn.shopify.com/s/files/1/1102/7446/products/white-gold-notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace-15310930247734_394x.jpg?v=1584141674 394w 394h,//cdn.shopify.com/s/files/1/1102/7446/products/white-gold-notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace-15310930247734_590x.jpg?v=1584141674 590w 590h,//cdn.shopify.com/s/files/1/1102/7446/products/white-gold-notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace-15310930247734_788x.jpg?v=1584141674 788w 788h,//cdn.shopify.com/s/files/1/1102/7446/products/white-gold-notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace-15310930247734_900x.jpg?v=1584141674 900w 900h,//cdn.shopify.com/s/files/1/1102/7446/products/white-gold-notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace-15310930247734.jpg?v=1584141674 1100w 1100h">
+        
+        
+        <img id="ProductGridImage-collection-template-161995751478-4481128169526" class="product_card__image lazyload featured"
+          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          data-src="//cdn.shopify.com/s/files/1/1102/7446/products/white-gold-notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace-15310930247734_{width}x.jpg?v=1584141674"
+          data-widths="[295,394,590,700,800,1000,1100]"
+          data-aspectratio="1.0"
+          data-sizes="auto"
+          data-expand="600"
+          data-fallback="//cdn.shopify.com/s/files/1/1102/7446/products/white-gold-notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace-15310930247734_295x.jpg?v=1584141674"
+          alt="White Gold Notorious B.I.G. x King Ice - XL White Gold Biggie Jesus Necklace NKX14125-Large">
+        <noscript>
+          <img class="product_card__image" src="//cdn.shopify.com/s/files/1/1102/7446/products/white-gold-notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace-15310930247734_394x.jpg?v=1584141674" alt="White Gold Notorious B.I.G. x King Ice - XL White Gold Biggie Jesus Necklace NKX14125-Large">
+        </noscript>
+          <img id="ProductGridImage-collection-template-161995751478-4481128169526" class="product_card__image alt lazyload"
+            data-src="//cdn.shopify.com/s/files/1/1102/7446/products/white-gold-notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace-15310930280502_{width}x.jpg?v=1584141674"
+            data-widths="[295,394,590,700,800,1000,1100]"
+            data-aspectratio="1.0"
+            data-sizes="auto"
+            data-expand="600"
+            alt="White Gold Notorious B.I.G. x King Ice - XL White Gold Biggie Jesus Necklace NKX14125-Large"></div>
+    </a>
+    <figcaption>
+      <div class="product-title">
+        <a href="/collections/all/products/notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace" class="title">Notorious B.I.G. x King Ice - XL White Gold Biggie Jesus Necklace</a>
+        
+      </div>
+      
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style='' class='jdgm-widget jdgm-preview-badge' data-id='4481128169526'
+data-template='collection'
+data-auto-install='false'>
+  <div style='display:none' class='jdgm-prev-badge' data-average-rating='0.00' data-number-of-reviews='0' data-number-of-questions='0'> <span class='jdgm-prev-badge__stars' data-score='0.00' tabindex='0' aria-label='0.00 stars'> <span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span> </span> <span class='jdgm-prev-badge__text'> No reviews </span> </div>
+</div>
+
+
+
+
+<span class="price">
+      
+        
+        <span class="money"><span class=money>$ 100.00</span></span>
+      
+      </span>
+    </figcaption><ul class="product-swatches product-swatches--circle">
+<li class="product-swatches__li">
+          <a href="/collections/all/products/notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace?variant=31825568071734" 
+            class="product-swatches__link product-swatches__link--selected"
+            aria-label="White Gold"
+            title="White Gold"
+            data-variant-id="31825568071734"
+            data-variant-url="/collections/all/products/notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace?variant=31825568071734"
+            data-variant-image="//cdn.shopify.com/s/files/1/1102/7446/products/white-gold-notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace-15310930247734_295x.jpg?v=1584141674"
+            data-variant-image-pattern="//cdn.shopify.com/s/files/1/1102/7446/products/white-gold-notorious-b-i-g-x-king-ice-xl-white-gold-biggie-jesus-necklace-15310930247734_{width}x.jpg?v=1584141674">
+            <div class="product-swatches__color lazyload" data-bgset="//cdn.shopify.com/s/files/1/1102/7446/t/39/assets/white-gold_20x.png?87241 20w, //cdn.shopify.com/s/files/1/1102/7446/t/39/assets/white-gold_40x.png?87241 40w, //cdn.shopify.com/s/files/1/1102/7446/t/39/assets/white-gold_80x.png?87241 80w" style="background-color: #EAEDED; background-image: url(//cdn.shopify.com/s/files/1/1102/7446/t/39/assets/white-gold_1x.png?87241);">
+              <span class="product-swatches__label">White Gold</span>
+            </div>
+          </a>
+        </li></ul>
+</figure>
+</div>
+   

@@ -18,7 +18,7 @@ namespace Kingice_Parser {
         private void ButtonParse_Click(object sender, RoutedEventArgs e) {
             string hrefRoot = "https://www.kingice.com";
 
-            for (int fileNum = 1; fileNum < 2; fileNum++) {
+            for (int fileNum = 1; fileNum < 22; fileNum++) {
                 string filePath = string.Format("C:\\Users\\Artur\\source\\repos\\Kingice_Parser\\Exports\\{0}.html", fileNum);
 
                 List<Product> result = new List<Product>();
@@ -66,12 +66,27 @@ namespace Kingice_Parser {
                     var content = htmlDoc.Text;
 
                     string prev = "";
+                    bool isDescription = false;
                     foreach (var item in content.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)) {
 
-                        bool isDescription = prev == "<H3>Description</H3>";
+                        if (!isDescription) {
+                            isDescription = prev == "<H3>Description</H3>";
+                            if (isDescription) {
+                                product.Details = new Details();
+                            }
+                        }
+                        else if (isDescription) {
+                            isDescription = prev != "<H3>DETAILS</H3>";
+                        }
+
                         if (isDescription) {
-                            product.Details = new Details();
-                            product.Details.Description = item.Substring(0, item.IndexOf("")).Replace("<DIV><SPAN>", "");
+                            product.Details.Description += "/n" + item;
+                            product.Details.Description.Replace("<SPAN>", "");
+                            product.Details.Description.Replace("</SPAN>", "");
+                            product.Details.Description.Replace("<DIV>", "");
+                            product.Details.Description.Replace("</DIV>", "");
+                            product.Details.Description.Replace("<P>", "");
+                            product.Details.Description.Replace("</P>", "");
                         }
                         if (product.Details != null) {
 
@@ -80,7 +95,7 @@ namespace Kingice_Parser {
                                 if (pair.Count > 2)
                                     throw new Exception("Parse symbol is found is attribute values!");
                                 var key = pair[0].Replace("<DIV><STRONG>", "").Trim();
-                                var value = pair[1].Replace("</DIV>", "").Trim();
+                                var value = pair[1].Replace("</DIV>", "").Replace("<STRONG>SKU: </STRONG>", "").Trim();
                                 product.Details.DetailItems.Add(key, value);
                             }
 
@@ -91,7 +106,10 @@ namespace Kingice_Parser {
                         prev = item;
                     }
                 }
-                File.AppendAllLines("test.csv", new[] { result[0].GetHeaderRow() });
+
+                if (fileNum == 1)
+                    File.AppendAllLines("test.csv", new[] { result[0].GetHeaderRow() });
+
                 File.AppendAllLines("test.csv", result.Where(product=>product.IsValid()).Select(product=>product.ToString()));
             }
         }   
