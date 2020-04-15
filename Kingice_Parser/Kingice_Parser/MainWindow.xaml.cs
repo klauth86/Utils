@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using HtmlAgilityPack;
 using System.IO;
+using System.Net;
+using System;
 
 namespace Kingice_Parser {
     /// <summary>
@@ -14,10 +16,9 @@ namespace Kingice_Parser {
         }
 
         private void ButtonParse_Click(object sender, RoutedEventArgs e) {
-
             string hrefRoot = "https://www.kingice.com";
 
-            for (int fileNum = 1; fileNum < 22; fileNum++) {
+            for (int fileNum = 1; fileNum < 2; fileNum++) {
                 string filePath = string.Format("C:\\Users\\Artur\\Downloads\\Html\\{0}.html", fileNum);
 
                 List<Product> result = new List<Product>();
@@ -41,7 +42,7 @@ namespace Kingice_Parser {
                         }
                         if (item.Contains("<a href=\"/collections/all/") && item.Contains("class=\"title\">")) {
                             var tmp = item.Replace("<a href=\"", "");
-                            current.href = tmp.Substring(0, tmp.IndexOf("\""));
+                            current.href = tmp.Substring(0, tmp.IndexOf("\"")).Trim();
                             current.productTitle = item.Substring(item.IndexOf('>')).Replace("</a>", "");
                         }
                         if (item.Contains("<span class=\"money\"><span class=money>")) {
@@ -55,6 +56,41 @@ namespace Kingice_Parser {
                     }
                 }
                 result.Add(current);
+
+
+                HtmlWeb web = new HtmlWeb();
+                Certificates.Instance.GetCertificatesAutomatically();
+                foreach (var product in result.Where(product=>product.IsValid())) {
+                    var fullRef = hrefRoot + product.href;
+                    var htmlDoc = web.LoadFromBrowser(fullRef);
+                    var content = htmlDoc.Text;
+
+                    string prev = "";
+                    foreach (var item in content.Split('\n', '\r')) {
+
+                        bool isDescription = prev == "<H3>Description</H3>";
+                        if (isDescription) {
+                            product.Details = new Details();
+                            product.Details.Description = item.Substring(0, item.IndexOf("")).Replace("<DIV><SPAN>", "");
+                        }
+                        if (product.Details != null) {
+
+                            if (item.Contains("<DIV><STRONG>")) {
+                                var pair = item.Replace(":</STRONG> ", "^").Split('^').ToList();
+                                if (pair.Count > 2)
+                                    throw new Exception("Parse symbol is found is attribute values!");
+                                var key = pair[0].Replace("<DIV><STRONG>", "").Trim();
+                                var value = pair[1].Replace("</DIV>", "").Trim();
+                                product.Details.DetailItems.Add(key, value);
+                            }
+
+                            if (item.Contains("<P class=variant-sku>")) {
+                                product.Details.SKU = item.Replace("<P class=variant-sku>", "").Replace("</P>", "");
+                            }
+                        }
+                        prev = item;
+                    }
+                }
 
                 File.AppendAllLines("test.csv", result.Where(product=>product.IsValid()).Select(product=>product.ToString()));
             }
