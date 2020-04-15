@@ -19,7 +19,7 @@ namespace Kingice_Parser {
             string hrefRoot = "https://www.kingice.com";
 
             for (int fileNum = 1; fileNum < 2; fileNum++) {
-                string filePath = string.Format("C:\\Users\\Artur\\Downloads\\Html\\{0}.html", fileNum);
+                string filePath = string.Format("C:\\Users\\Artur\\source\\repos\\Kingice_Parser\\Exports\\{0}.html", fileNum);
 
                 List<Product> result = new List<Product>();
                 Product current = null;                          
@@ -42,7 +42,7 @@ namespace Kingice_Parser {
                         }
                         if (item.Contains("<a href=\"/collections/all/") && item.Contains("class=\"title\">")) {
                             var tmp = item.Replace("<a href=\"", "");
-                            current.href = tmp.Substring(0, tmp.IndexOf("\"")).Trim();
+                            current.productHref = tmp.Substring(0, tmp.IndexOf("\"")).Trim();
                             current.productTitle = item.Substring(item.IndexOf('>')).Replace("</a>", "");
                         }
                         if (item.Contains("<span class=\"money\"><span class=money>")) {
@@ -61,12 +61,12 @@ namespace Kingice_Parser {
                 HtmlWeb web = new HtmlWeb();
                 Certificates.Instance.GetCertificatesAutomatically();
                 foreach (var product in result.Where(product=>product.IsValid())) {
-                    var fullRef = hrefRoot + product.href;
+                    var fullRef = hrefRoot + product.productHref;
                     var htmlDoc = web.LoadFromBrowser(fullRef);
                     var content = htmlDoc.Text;
 
                     string prev = "";
-                    foreach (var item in content.Split('\n', '\r')) {
+                    foreach (var item in content.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)) {
 
                         bool isDescription = prev == "<H3>Description</H3>";
                         if (isDescription) {
@@ -91,7 +91,7 @@ namespace Kingice_Parser {
                         prev = item;
                     }
                 }
-
+                File.AppendAllLines("test.csv", new[] { result[0].GetHeaderRow() });
                 File.AppendAllLines("test.csv", result.Where(product=>product.IsValid()).Select(product=>product.ToString()));
             }
         }   

@@ -7,7 +7,6 @@ namespace Kingice_Parser {
         public string productHref = "";
         public string productTitle = "";
         public string price = "";
-        public string href = "";
 
         public List<string> Types = new List<string>();
 
@@ -15,6 +14,20 @@ namespace Kingice_Parser {
 
         public bool IsValid() {
             return !string.IsNullOrEmpty(productTitle);
+        }
+
+        public string GetHeaderRow() {
+            return string.Format("{0}@{1}@{2}@{3}@{4}@{5}@{6}@{7}@{8}",
+    "Номер",//num, 
+    "Изображение",//imageSrc.Trim(),
+    "Отеосительная ссылка",//productHref.Trim(),
+    "Наименование (Title)",//productTitle.Trim(),
+    "Цена (Price)",//price.Trim(),
+    "Материалы (circle)",//string.Join(", ", Types).Trim(),
+    "Описание (Description)",//Details.Description.Trim(),
+    "Подробные сведение (Details)",//string.Join(", ", Details.DetailItems),
+    "Артикул (SKU)"//Details.SKU.Trim()
+    );
         }
 
         public override string ToString() {
